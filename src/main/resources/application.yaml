@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: location-
+
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/location
+    username: postgres
+    password: admin
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    show-sql: true
+
+logging:
+  level:
+    root: INFO
+    org.hibernate: DEBUG
+    io.aygh7.location_system: DEBUG
