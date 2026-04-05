@@ -10,12 +10,13 @@ import java.security.Principal;
 import java.util.Map;
 
 @Slf4j
-public class CustomHandshakeHandler extends DefaultHandshakeHandler {
+public class CustomHandSakeHandler extends DefaultHandshakeHandler {
 
     @Override
     protected @Nullable Principal determineUser(ServerHttpRequest request, WebSocketHandler wsHandler, Map<String, Object> attributes) {
-        String userId = request.getURI().getQuery();
-        log.info("User is received while creating connection {}", userId);
-        return () -> userId;
+        String token = request.getURI().getQuery();
+        log.info("User connection token : {}", token);
+
+        return () -> token;
     }
 }
