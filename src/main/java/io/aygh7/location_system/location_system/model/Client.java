@@ -1,23 +1,21 @@
 package io.aygh7.location_system.location_system.model;
 
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "clients")
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class Client {
+@SuperBuilder
+public class Client extends User {
 
-    @Column(name = "email")
-    private String email;
-    @Column(name = "phone_number")
-    private String phoneNumber;
+
 
 }

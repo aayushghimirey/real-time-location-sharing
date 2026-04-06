@@ -31,6 +31,10 @@ public class JwtHelperService {
         return (username.equalsIgnoreCase(userDetails.getUsername())) && !isTokenExpired(token);
     }
 
+    public String extractUsername(String token) {
+        return extractAllClaims(token).getSubject();
+    }
+
 
     // -- private helpers
 
@@ -44,9 +48,6 @@ public class JwtHelperService {
                 .compact();
     }
 
-    private String extractUsername(String token) {
-        return extractAllClaims(token).getSubject();
-    }
 
     private boolean isTokenExpired(String token) {
         return extractAllClaims(token).getExpiration().before(new Date());
