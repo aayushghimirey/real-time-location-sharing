@@ -15,6 +15,10 @@ spring:
       format_sql: true
     show-sql: true
 
+security:
+  secret: aldsjgfhaskldjfgaskdgfuwiegr389756tadfbskjhdfgasfasdfa
+  expire: 450000
+
 logging:
   level:
     root: INFO
