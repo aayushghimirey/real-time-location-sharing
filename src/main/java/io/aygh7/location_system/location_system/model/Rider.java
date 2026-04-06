@@ -1,13 +1,10 @@
-package io.aygh7.location_system.location_system.entity;
+package io.aygh7.location_system.location_system.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.UUID;
 
 @Entity
 @Table(name = "rider")
@@ -23,6 +20,9 @@ public class Rider extends AuditFields {
 
     @Column(name = "email")
     private String email;
+
+    @Column(name = "password")
+    private String password;
 
     @Column(name = "vehicle_number")
     private String vehicleNumber;

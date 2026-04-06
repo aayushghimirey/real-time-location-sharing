@@ -1,4 +1,4 @@
-package io.aygh7.location_system.location_system.entity;
+package io.aygh7.location_system.location_system.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package io.aygh7.location_system.location_system.entity;
+package io.aygh7.location_system.location_system.model;
 
 public enum BookingStatus {
     PENDING,
