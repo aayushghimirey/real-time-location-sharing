@@ -5,4 +5,6 @@ import io.aygh7.location_system.location_system.dto.response.ClientProfileRespon
 
 public interface ClientService {
     ClientProfileResponse registerClient(ClientRegisterRequest clientRegisterRequest);
+
+    ClientProfileResponse getClientProfile(Long id);
 }

@@ -2,6 +2,7 @@ package io.aygh7.location_system.location_system.service.impl;
 
 import io.aygh7.location_system.location_system.dto.request.ClientRegisterRequest;
 import io.aygh7.location_system.location_system.dto.response.ClientProfileResponse;
+import io.aygh7.location_system.location_system.exception.ClientNotFoundException;
 import io.aygh7.location_system.location_system.mapper.ClientMapper;
 import io.aygh7.location_system.location_system.model.Client;
 import io.aygh7.location_system.location_system.repository.ClientRepository;
@@ -26,6 +27,15 @@ public class ClientServiceImpl implements ClientService {
         Client client = clientMapper.toClient(clientRegisterRequest);
 
         client = clientRepository.save(client);
+
+        return clientMapper.toClientProfileResponse(client);
+    }
+
+    @Override
+    public ClientProfileResponse getClientProfile(Long id) {
+        Client client = clientRepository.findById(id).orElseThrow(
+                () -> new ClientNotFoundException("Invalid client")
+        );
 
         return clientMapper.toClientProfileResponse(client);
     }

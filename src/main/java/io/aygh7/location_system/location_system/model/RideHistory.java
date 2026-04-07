@@ -1,8 +1,7 @@
 package io.aygh7.location_system.location_system.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -11,6 +10,9 @@ import java.time.LocalDateTime;
 @Table(name = "ride_history")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class RideHistory extends AuditFields {
 
     @ManyToOne(fetch = FetchType.LAZY)

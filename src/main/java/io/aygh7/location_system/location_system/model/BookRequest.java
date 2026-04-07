@@ -1,8 +1,7 @@
 package io.aygh7.location_system.location_system.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -10,6 +9,9 @@ import java.time.LocalDateTime;
 @Table(name = "book_request")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class BookRequest extends AuditFields {
 
     @ManyToOne(fetch = FetchType.LAZY)

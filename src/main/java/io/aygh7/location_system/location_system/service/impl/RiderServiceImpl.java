@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @Slf4j
 @RequiredArgsConstructor
@@ -28,6 +30,11 @@ public class RiderServiceImpl implements RiderService {
 
         return riderMapper.toRiderProfileResponse(rider);
 
+    }
+
+    @Override
+    public List<RiderProfileResponse> getAllAvailableRider() {
+        return riderRepository.findAllByIsAvailable(true).stream().map(riderMapper::toRiderProfileResponse).toList();
     }
 
     private void validate(RiderRegisterRequest request) {

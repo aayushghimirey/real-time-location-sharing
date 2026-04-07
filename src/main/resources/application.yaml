@@ -19,6 +19,9 @@ security:
   secret: aldsjgfhaskldjfgaskdgfuwiegr389756tadfbskjhdfgasfasdfa
   expire: 450000
 
+servlet:
+
+
 logging:
   level:
     root: INFO
